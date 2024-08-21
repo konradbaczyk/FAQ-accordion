@@ -1,0 +1,125 @@
+@use "./reset" as *;
+
+:root {
+	--White: rgb(255, 255, 255);
+	--Light-pink: rgb(249, 240, 255);
+	--Grayish-purple: rgb(140, 105, 145);
+	--Grayish-purple-lines: rgba(140, 105, 145, 0.1);
+	--Dark-purple: rgb(47, 21, 51);
+	--Pink: rgb(173, 40, 235);
+}
+
+body {
+	display: flex;
+	align-items: center;
+	font-family: "Work Sans", sans-serif;
+	font-size: 1.6rem;
+	background-color: var(--Light-pink);
+}
+
+.background {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 30rem;
+	background-image: url("../assets/images/background-pattern-mobile.svg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	z-index: -1;
+}
+
+.faq-box {
+	width: 90%;
+	max-width: 570px;
+	height: fit-content;
+	margin: 0 auto;
+	padding: 1.5em;
+	color: var(--Dark-purple);
+	background-color: var(--White);
+	border-radius: 12px;
+
+	&__header {
+		margin-bottom: 1.3em;
+		display: flex;
+		align-items: center;
+		gap: 1em;
+
+		&--heading {
+			font-size: 4rem;
+		}
+	}
+
+	&__question-box {
+		position: relative;
+		margin: 1em 0;
+		border-bottom: 1px solid var(--Grayish-purple-lines);
+
+		&:last-child {
+			border-bottom: none;
+		}
+
+		&--heading {
+			padding-right: 3.5em;
+			font-size: 1.7rem;
+			transition: color 0.3s;
+
+			&:hover {
+				color: var(--Pink);
+				cursor: pointer;
+			}
+		}
+
+		input[type="checkbox"] {
+			appearance: none;
+		}
+
+		&--button {
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 1000%;
+			transform: translateY(-20%);
+			width: 3.5rem;
+			height: 3.5rem;
+			background-image: url("../assets/images/icon-plus.svg");
+			background-repeat: no-repeat;
+			background-size: cover;
+			z-index: 100;
+
+			&:hover {
+				cursor: pointer;
+			}
+
+			&:checked {
+				background-image: url("../assets/images/icon-minus.svg");
+			}
+
+			&:checked ~ div {
+				grid-template-rows: 1fr;
+			}
+		}
+
+		&--text {
+			max-height: fit-content;
+			padding: 1.2rem 0;
+			font-size: 1.5rem;
+			line-height: 130%;
+			color: var(--Grayish-purple);
+			display: grid;
+			grid-template-rows: 0fr;
+			transition: grid-template-rows 0.3s;
+		}
+
+		&--text p {
+			overflow: hidden;
+		}
+	}
+}
+
+@media (min-width: 700px) {
+	.background {
+		height: 38rem;
+		background-image: url("../assets/images/background-pattern-desktop.svg");
+	}
+}
