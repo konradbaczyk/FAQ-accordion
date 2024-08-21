@@ -7,5 +7,5 @@ This is a solution to the [FAQ accordion challenge on Frontend Mentor](https://w
 
 ### Links
 
-- Solution URL: [Github with code](https://github.com/konradbaczyk/Interactive-rating-component)
-- Live site URL: [Live site](https://konradbaczyk.github.io/Interactive-rating-component/)
+- Solution URL: [Github with code](https://github.com/konradbaczyk/FAQ-accordion)
+- Live site URL: [Live site](https://konradbaczyk.github.io/FAQ-accordion/)
